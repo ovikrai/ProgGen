@@ -1,0 +1,20 @@
+#main-bottom-footer {
+  background-color: black;
+  color: white;
+}
+
+.measure {
+  border-right-style: solid;
+  border-right-color: black;
+  border-right-width: 2px;
+}
+
+
+
+.chord{
+  font-weight: bolder;
+}
+
+.staff{
+  margin-bottom: 8px;
+}
