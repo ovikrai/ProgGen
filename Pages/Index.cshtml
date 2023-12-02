@@ -14,106 +14,40 @@
                     <div class="container">
                         <!-- Staff Component -->
                         <div class="row staff">
+                            <div class="col-auto">
+                                <div class="clef">𝄞</div>
+                            </div>                           
+                            <p>@Model.testResponse</p>
+                            
+                            @for (int i = 0; i < Model.staff.Length / 4; i++)
+                            {
                             <!-- Measure Component -->
                             <div class="col measure">
-                                <div class="row">
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure1[0]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure1[1]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure1[2]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure1[3]</div>
-                                        <div>/</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Measure Component -->
-                            <div class="col measure">
-                                <div class="row">
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure2[0]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure2[1]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure2[2]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure2[3]</div>
-                                        <div>/</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Measure Component -->
-                            <div class="col measure">
-                                <div class="row">
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure3[0]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure3[1]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure3[2]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure3[3]</div>
-                                        <div>/</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Measure Component -->
-                            <div class="col measure">
-                                <div class="row">
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure4[0]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure4[1]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure4[2]</div>
-                                        <div>/</div>
-                                    </div>
-                                    <!-- Chord Component -->
-                                    <div class="col chord">
-                                        <div>@Model.measure4[3]</div>
-                                        <div>/</div>
-                                    </div>
-                                </div>
-                            </div>
+                               <div class="row">
+                                   <!-- Chord Component -->
+                                   <div class="col chord">
+                                       <div>@Model.staff[i, 0]</div>
+                                       <div>/</div>
+                                   </div>
+                                   <!-- Chord Component -->
+                                   <div class="col chord">
+                                       <div>@Model.staff[i,1]</div>
+                                       <div>/</div>
+                                   </div>
+                                   <!-- Chord Component -->
+                                   <div class="col chord">
+                                       <div>@Model.staff[i,2]</div>
+                                       <div>/</div>
+                                   </div>
+                                   <!-- Chord Component -->
+                                   <div class="col chord">
+                                       <div>@Model.staff[i,3]</div>
+                                       <div>/</div>
+                                   </div>
+                               </div>
+                            </div> 
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -124,71 +58,73 @@
             <nav id="main-bottom-footer" class="navbar fixed-bottom bg-body-tertiary">
                 <div class="container-fluid">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-2">
-                                <!-- Generation Button -->
-                                <button onclick="" class="btn btn-info" type="button">Generate Progession</button>
-                            </div>
-                            <div class="col-2">
-                                <!-- Key Signature -->
-                                <label for="key-signature-input" class="form-label">Key Signature:</label>
-                                <select id="key-signature-input" class="form-select">
-                                    <!-- Mayor Keys -->
-                                    <option selected>C Major</option>
-                                    <option>G Major</option>
-                                    <option>D Major</option>
-                                    <option>A Major</option>
-                                    <option>E Major</option>
-                                    <option>B Major</option>
-                                    <option>F# / Gb Major</option>
-                                    <option>Db Major</option>
-                                    <option>Ab Major</option>
-                                    <option>Eb Major</option>
-                                    <option>Bb Major</option>
-                                    <option>F Major</option>
+                        <form method="post" asp-page-handler="">
+                            <div class="row">
+                                <div class="col-2">
+                                    <!-- Generation Button -->
+                                    <button class="btn btn-info" type="submit">Generate Progession</button>
+                                </div>
+                                <div class="col-2">
+                                    <!-- Key Signature -->
+                                    <label for="key-signature-input" class="form-label">Key Signature:</label>
+                                    <select id="key-signature-input" class="form-select">
+                                        <!-- Mayor Keys -->
+                                        <option selected>C Major</option>
+                                        <option>G Major</option>
+                                        <option>D Major</option>
+                                        <option>A Major</option>
+                                        <option>E Major</option>
+                                        <option>B Major</option>
+                                        <option>F# / Gb Major</option>
+                                        <option>Db Major</option>
+                                        <option>Ab Major</option>
+                                        <option>Eb Major</option>
+                                        <option>Bb Major</option>
+                                        <option>F Major</option>
 
-                                    <!-- Minor Keys -->
-                                    <option>A minor</option>
-                                    <option>E minor</option>
-                                    <option>B minor</option>
-                                    <option>F# minor</option>
-                                    <option>C# minor</option>
-                                    <option>G# minor</option>
-                                    <option>Eb / D# minor</option>
-                                    <option>Bb minor</option>
-                                    <option>F minor</option>
-                                    <option>C minor</option>
-                                    <option>G minor</option>
-                                    <option>D minor</option>
-                                </select>
-                            </div>
-
-                            <!-- Harmonitation Modifiers -->
-                            <div class="col-2">
-                                <p>Harmonization Modifiers:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Chromatic Approach
-                                    </label>
+                                        <!-- Minor Keys -->
+                                        <option>A minor</option>
+                                        <option>E minor</option>
+                                        <option>B minor</option>
+                                        <option>F# minor</option>
+                                        <option>C# minor</option>
+                                        <option>G# minor</option>
+                                        <option>Eb / D# minor</option>
+                                        <option>Bb minor</option>
+                                        <option>F minor</option>
+                                        <option>C minor</option>
+                                        <option>G minor</option>
+                                        <option>D minor</option>
+                                    </select>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Tritone Subtitution
-                                    </label>
+                                <!-- Harmonitation Modifiers -->
+                                <div class="col-2">
+                                    <p>Harmonization Modifiers:</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Chromatic Approach
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Tritone Subtitution
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Complex Jazz Reharmonization
+                                        </label>
+                                    </div>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Complex Jazz Reharmonization
-                                    </label>
-                                </div>
                             </div>
-
-                        </div>
+                        </form>
                     </div>
                 </div>
             </nav>

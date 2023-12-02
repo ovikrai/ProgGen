@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "ZA0aTkyA9eAIlZk+nvC961qaFi5D/1U38GHFmSZifF1/oI25CgHbU8sFQCv0IjY5H0QbKmK+OTJCLKK67Lnr3w==",
+  "dgSpecHash": "ZEfPZe8Ef3tLTangA5c6AjCAJq5SytwGh+auw6tf3d1nnuADbInW2u8ppue9XV6QiNaTB7EPWBf28QucdUJdSg==",
   "success": true,
-  "projectFilePath": "/home/ovikrai/ConsoleGPT/ClientApp/ClientApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\Ovicorps Repos\\Pinagen\\Pinagen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ovikrai\\.nuget\\packages\\azure.ai.openai\\1.0.0-beta.9\\azure.ai.openai.1.0.0-beta.9.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\ovikrai\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
   "logs": []
 }

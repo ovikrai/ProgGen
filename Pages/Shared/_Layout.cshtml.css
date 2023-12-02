@@ -2,7 +2,7 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -19,6 +19,8 @@ html {
 body {
   background-color: white;
 }
+
+
 
 
 a.navbar-brand {
