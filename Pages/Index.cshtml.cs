@@ -1,7 +1,9 @@
 using Azure;
 using Azure.AI.OpenAI;
+using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Numerics;
 using System.Threading;
 
@@ -19,13 +21,14 @@ namespace Pinagen.Pages
             { "X", "X", "X", "X"  }
         };
 
+
         public OpenAIClient openAIClient;
         public ChatCompletionsOptions completionsOptions;
 
-        // TODO: PROMPT CONSTRUCTION WITH FORM INPUT DATA
-        public string prompt = "Create a chord progression in C minor, " +
-                               "with 4 measure and " +
-                               "with 4 chord per measure";
+        public string? keySignature = "C Major";
+        public string? reHarmonization = "out";
+        public string? prompt;
+        public bool isPromptError;
 
         public string[]? chatResponse = { };
 
@@ -63,8 +66,15 @@ namespace Pinagen.Pages
                 PresencePenalty = 0.5f,
                 DeploymentName = "gpt-35-turbo"
             };
-            // TEST SERVICE AND EXAMPLE PROMPT
-            // TODO: CHECK REFERENCE
+            // READ FORM DATA AND PHARSE THE PROMPT
+            keySignature = Request.Form["keySignature"];
+            reHarmonization = Request.Form["reHarmonization"];
+
+            prompt = $"Create ONLY a chord progression in {keySignature}, " + 
+                               "with 4 measure and" +
+                               "with 4 chord per measure and" +
+                               $"with {reHarmonization} Reharmonization technic.";
+
             completionsOptions.Messages.Add(new(ChatRole.User, prompt));
             Response<ChatCompletions> completions = await openAIClient.GetChatCompletionsAsync(completionsOptions);
             
@@ -72,64 +82,77 @@ namespace Pinagen.Pages
             parseChatResponse(completions.Value.Choices[0].Message.Content);
         }
         
-        // TODO: PARSE RESPONSE TO ARRAY OF CHORDS
-        private async void parseChatResponse(string chatResponse)
+        private void parseChatResponse(string chatResponse)
         {
             Console.WriteLine(chatResponse);
+            Console.WriteLine(keySignature);
 
-            string[] chords = chatResponse.Split("\n\n");
+            string[] chat = chatResponse.Split("\n\n");
 
-            string[] measure1;
-            string[] measure2;
-            string[] measure3;
-            string[] measure4;
-                        
-            measure1 = chords[1].Split("\n");
-            measure2 = chords[2].Split("\n");
-            measure3 = chords[3].Split("\n");
-            measure4 = chords[4].Split("\n");
+            string[] measure1 = [];
+            string[] measure2 = [];
+            string[] measure3 = [];
+            string[] measure4 = [];
 
-            measure1 = measure1[1].Split(" - ");
-            measure2 = measure2[1].Split(" - ");
-            measure3 = measure3[1].Split(" - ");
-            measure4 = measure4[1].Split(" - ");
-             
-            for (int i = 0; i < NUMBER_OF_MEASURES; i++)
+            try
             {
-                switch (i)
+                measure1 = chat[1].Split("\n");
+                measure2 = chat[2].Split("\n");
+                measure3 = chat[3].Split("\n");
+                measure4 = chat[4].Split("\n");
+
+                string delimiterString = " - ";
+                measure1 = measure1[1].Split(delimiterString);
+                measure2 = measure2[1].Split(delimiterString);
+                measure3 = measure3[1].Split(delimiterString);
+                measure4 = measure4[1].Split(delimiterString);
+
+                for (int i = 0; i < NUMBER_OF_MEASURES; i++)
                 {
-                    case 0:
-                        staff[i, 0] = measure1[0];
-                        staff[i, 1] = measure1[1];
-                        staff[i, 2] = measure1[2];
-                        staff[i, 3] = measure1[3];
-                        break;
+                    switch (i)
+                    {
+                        case 0:
+                            staff[i, 0] = measure1[0];
+                            staff[i, 1] = measure1[1];
+                            staff[i, 2] = measure1[2];
+                            staff[i, 3] = measure1[3];
+                            break;
 
 
-                    case 1:
-                        staff[i, 0] = measure2[0];
-                        staff[i, 1] = measure2[1];
-                        staff[i, 2] = measure2[2];
-                        staff[i, 3] = measure2[3];
-                        break;
+                        case 1:
+                            staff[i, 0] = measure2[0];
+                            staff[i, 1] = measure2[1];
+                            staff[i, 2] = measure2[2];
+                            staff[i, 3] = measure2[3];
+                            break;
 
 
-                    case 2:
-                        staff[i, 0] = measure3[0];
-                        staff[i, 1] = measure3[1];
-                        staff[i, 2] = measure3[2];
-                        staff[i, 3] = measure3[3];
-                        break;
+                        case 2:
+                            staff[i, 0] = measure3[0];
+                            staff[i, 1] = measure3[1];
+                            staff[i, 2] = measure3[2];
+                            staff[i, 3] = measure3[3];
+                            break;
 
-                    case 3:
-                        staff[i, 0] = measure4[0];
-                        staff[i, 1] = measure4[1];
-                        staff[i, 2] = measure4[2];
-                        staff[i, 3] = measure4[3];
-                        break;
+                        case 3:
+                            staff[i, 0] = measure4[0];
+                            staff[i, 1] = measure4[1];
+                            staff[i, 2] = measure4[2];
+                            staff[i, 3] = measure4[3];
+                            break;
+                    }
+
                 }
-
             }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+                isPromptError = true;
+            }
+
+
+
+                         
+           
 
 
         }

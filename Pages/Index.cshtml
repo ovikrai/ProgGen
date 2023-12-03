@@ -4,50 +4,60 @@
     ViewData["Title"] = "Home page";
 
 }
-<div class="container">
-    <div class="row-cols-auto justify-content-center align-items-center g-2">
+<div class="container-fluid">
+    <div class="row-cols-auto justify-content-center align-items-center g-1">
         <div class="col">
             <!-- Progression Component -->
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Progression No.1</h4>
+                    <h4 class="card-title">Generated progression:</h4>
                     <div class="container">
                         <!-- Staff Component -->
+                        
                         <div class="row staff">
                             <div class="col-auto">
                                 <div class="clef">𝄞</div>
                             </div>                           
-                            
-                            @for (int i = 0; i < Model.staff.Length / 4; i++)
-                            {
-                            <!-- Measure Component -->
-                            <div class="col measure">
-                               <div class="row">
-                                   <!-- Chord Component -->
-                                   <div class="col chord">
-                                       <div>@Model.staff[i, 0]</div>
-                                       <div>/</div>
-                                   </div>
-                                   <!-- Chord Component -->
-                                   <div class="col chord">
-                                       <div>@Model.staff[i,1]</div>
-                                       <div>/</div>
-                                   </div>
-                                   <!-- Chord Component -->
-                                   <div class="col chord">
-                                       <div>@Model.staff[i,2]</div>
-                                       <div>/</div>
-                                   </div>
-                                   <!-- Chord Component -->
-                                   <div class="col chord">
-                                       <div>@Model.staff[i,3]</div>
-                                       <div>/</div>
-                                   </div>
-                               </div>
-                            </div> 
-                            }
 
+                            @if (!Model.isPromptError) 
+                            {
+                                @for (int i = 0; i < Model.staff.Length / 4; i++)
+                                {
+                                    <!-- Measure Component -->
+                                    <div class="col measure">
+                                       <div class="row">
+                                           <!-- Chord Component -->
+                                           <div class="col chord">
+                                               <div>@Model.staff[i, 0]</div>
+                                               <div>/</div>
+                                           </div>
+                                           <!-- Chord Component -->
+                                           <div class="col chord">
+                                               <div>@Model.staff[i,1]</div>
+                                               <div>/</div>
+                                           </div>
+                                           <!-- Chord Component -->
+                                           <div class="col chord">
+                                               <div>@Model.staff[i,2]</div>
+                                               <div>/</div>
+                                           </div>
+                                           <!-- Chord Component -->
+                                           <div class="col chord">
+                                               <div>@Model.staff[i,3]</div>
+                                               <div>/</div>
+                                           </div>
+                                       </div>
+                                    </div> 
+                                }
+
+                            } else
+                            {
+                                 <div class="col-auto">
+                                    <h2> Something went wrong! Try generating a new chord progression.</h2>        
+                                 </div>
+                            }
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -61,14 +71,15 @@
                             <div class="row">
                                 <div class="col-2">
                                     <!-- Generation Button -->
-                                    <button class="btn btn-info" type="submit">Generate Progession</button>
+                                    <button class="btn btn-info btn-lg" type="submit">Generate Progession</button>
                                 </div>
                                 <div class="col-2">
                                     <!-- Key Signature -->
-                                    <label for="key-signature-input" class="form-label">Key Signature:</label>
-                                    <select id="key-signature-input" class="form-select">
+                                    <label for="keySignature" class="form-label">Key Signature:</label>
+                                    <select id="keySignature" name="keySignature" class="form-select">
                                         <!-- Mayor Keys -->
-                                        <option selected>C Major</option>
+                                        <option selected>@Model.keySignature</option>
+                                        <option>C Major</option>
                                         <option>G Major</option>
                                         <option>D Major</option>
                                         <option>A Major</option>
@@ -99,28 +110,21 @@
 
                                 <!-- Harmonitation Modifiers -->
                                 <div class="col-2">
-                                    <p>Harmonization Modifiers:</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Chromatic Approach
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Tritone Subtitution
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Complex Jazz Reharmonization
-                                        </label>
-                                    </div>
-                                </div>
+                                    <!-- Harmonitation Modifiers -->
+                                    <label for="reHarmonization" class="form-label">ReHarmonization Modifiers:</label>
+                                    <select id="reHarmonization" name="reHarmonization" value="@Model.reHarmonization" class="form-select">
+                                        <option selected>@Model.reHarmonization</option>
+                                        <option value="out">None</option>
+                                        <option>Diatonic Approach</option>
+                                        <option>Dominant Approach</option>
+                                        <option>Chromatic Approach</option>
+                                        <option>Double Chromatic Approach</option>
+                                        <option>Parallel Approach</option>
+                                        <option>Tritone Subtitution</option>
+                                        <option>Tonic Subtitution</option>
+                                        <option>Subdominant Subtitution</option>
+                                    </select>
+                                 </div>
 
                             </div>
                         </form>
