@@ -2,7 +2,6 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-
 }
 <div class="container-fluid">
     <div class="row-cols-auto justify-content-center align-items-center g-1">
@@ -21,29 +20,29 @@
 
                             @if (!Model.isPromptError) 
                             {
-                                @for (int i = 0; i < Model.staff.Length / 4; i++)
+                                @for (int i = 0; i < Model.measures.Count; i++)
                                 {
                                     <!-- Measure Component -->
                                     <div class="col measure">
                                        <div class="row">
                                            <!-- Chord Component -->
                                            <div class="col chord">
-                                               <div>@Model.staff[i, 0]</div>
+                                               <div>@Model.measures[i][0]</div>
                                                <div>/</div>
                                            </div>
                                            <!-- Chord Component -->
                                            <div class="col chord">
-                                               <div>@Model.staff[i,1]</div>
+                                               <div>@Model.measures[i][1]</div>
                                                <div>/</div>
                                            </div>
                                            <!-- Chord Component -->
                                            <div class="col chord">
-                                               <div>@Model.staff[i,2]</div>
+                                               <div>@Model.measures[i][2]</div>
                                                <div>/</div>
                                            </div>
                                            <!-- Chord Component -->
                                            <div class="col chord">
-                                               <div>@Model.staff[i,3]</div>
+                                               <div>@Model.measures[i][3]</div>
                                                <div>/</div>
                                            </div>
                                        </div>

@@ -2,8 +2,8 @@
 
 public class ProxySettings
 {
-	public const string PROXY_URL = "https://aoai.hacktogether.net";
-	public const string KEY = "95f23aba-f82c-47cd-91a9-7bdff141082b";
-	public const string GITHUB_USER = "/ovikrai";
+	public const string PROXY_URL = "YOUR_PROXY_URL";
+	public const string KEY = "YOUR_PERSONAL_KEY";
+	public const string GITHUB_USER = "YOUR_GITHUB_NAME";
 }
 

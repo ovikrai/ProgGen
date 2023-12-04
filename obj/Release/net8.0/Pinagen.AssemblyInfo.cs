@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pinagen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+786ceec02bf76574a8c8b48ddb608b8e8ae559c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+186f354a4eef1118d2c2a0063bbba09d1ba03984")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pinagen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pinagen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
