@@ -1,0 +1,11 @@
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Pinagen.exe
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\appsettings.json
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Pinagen.dll
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Pinagen.deps.json
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Pinagen.runtimeconfig.json
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Pinagen.pdb
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Azure.AI.OpenAI.dll
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Azure.Core.dll
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Ovicorps Repos\Pinagen\obj\Release\net8.0\PubTmp\Out\System.Memory.Data.dll

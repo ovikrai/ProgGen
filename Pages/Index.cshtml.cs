@@ -26,7 +26,7 @@ namespace Pinagen.Pages
         public ChatCompletionsOptions completionsOptions;
 
         public string? keySignature = "C Major";
-        public string? reHarmonization = "out";
+        public string? reHarmonization = "None";
         public string? prompt;
         public bool isPromptError;
 

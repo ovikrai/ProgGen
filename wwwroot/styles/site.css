@@ -1,0 +1,56 @@
+#main-bottom-footer {
+  background-color: black;
+  color: white;
+}
+
+.measure {
+  border-right-style: solid;
+  border-right-color: black;
+  border-right-width: 2px;
+}
+
+.clef {
+    font-family: 'Noto Music', sans-serif;
+    font-size: 32px;
+    margin-right: -8px;
+}
+
+.chord {
+    font-family: 'Noto Music', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.staff{
+  margin-bottom: 8px;
+}
+
+h1 {
+    font-family: 'Rowdies', sans-serif;
+    font-size: 64px;
+}
+
+h2 {
+    font-family: 'Rowdies', sans-serif;
+    font-size: 32px;
+}
+
+h3 {
+    font-family: 'Rowdies', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+h4 {
+    font-family: 'Rowdies', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+h5 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+

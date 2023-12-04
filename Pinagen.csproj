@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\site.css" />
+    <Content Remove="wwwroot\styles\site.css" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\styles\site.css" />
   </ItemGroup>
 
   <ItemGroup>
