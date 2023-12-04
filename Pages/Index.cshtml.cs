@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Numerics;
 using System.Threading;
-
-
+using Pinagen.Pages.Shared;
 
 namespace Pinagen.Pages
 {
@@ -20,7 +19,6 @@ namespace Pinagen.Pages
             { "X", "X", "X", "X"  },
             { "X", "X", "X", "X"  }
         };
-
 
         public OpenAIClient openAIClient;
         public ChatCompletionsOptions completionsOptions;
@@ -47,13 +45,10 @@ namespace Pinagen.Pages
         {
             //STEP 1: INIT ChatGPT
             Console.WriteLine(this.staff.Length / 4);
-            //STEP 1: INIT ChatGPT
-            string proxyUrl = "https://aoai.hacktogether.net";
-            string key = "95f23aba-f82c-47cd-91a9-7bdff141082b";
 
-            Uri proxyUri = new(proxyUrl + "/v1/api");
+            Uri proxyUri = new(ProxySettings.PROXY_URL + "/v1/api");
 
-            AzureKeyCredential token = new(key + "/ovikrai");
+            AzureKeyCredential token = new(ProxySettings.KEY + ProxySettings.GITHUB_USER);
             openAIClient = new(proxyUri, token);
 
             // PROMT CONSTRUCTION            

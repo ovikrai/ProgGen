@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\styles\site.css" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\styles\site.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="Pages\Index.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

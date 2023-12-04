@@ -241,6 +241,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "E:\\Ovicorps Repos\\Pinagen\\wwwroot\\styles\\site.css",
+      "PackagePath": "staticwebassets\\styles\\site.css"
+    },
+    {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Pinagen.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

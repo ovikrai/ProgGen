@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/YlcY3DsJWfV+dB+xDcp7o9jPb5StnvxgYQtcLa3WXw=",
+  "Hash": "2eJ205dhidAgA0YyUhjh7pLNBPthT7Sp75h3SvM2dg4=",
   "Source": "Pinagen",
   "BasePath": "_content/Pinagen",
   "Mode": "Default",
@@ -1174,6 +1174,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "E:\\Ovicorps Repos\\Pinagen\\wwwroot\\styles\\site.css",
+      "SourceId": "Pinagen",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Ovicorps Repos\\Pinagen\\wwwroot\\",
+      "BasePath": "_content/Pinagen",
+      "RelativePath": "styles/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\styles\\site.css"
     }
   ]
 }
