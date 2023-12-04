@@ -83,7 +83,6 @@ namespace Pinagen.Pages
             Console.WriteLine(keySignature);
 
             string[] chat = chatResponse.Split("\n\n");
-
             string[] measure1 = [];
             string[] measure2 = [];
             string[] measure3 = [];
